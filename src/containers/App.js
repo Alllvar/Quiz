@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import Quiz from "../components/Quiz/quiz";
+import Quiz from "../components/QuizContainer/quiz";
 import {
     BrowserRouter as Router,
     Route,
