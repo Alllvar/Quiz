@@ -39,24 +39,8 @@ class Answers extends React.Component {
             step: 0,
             answers: {}
         };
-        this.handleClickedAnswer = this.handleClickedAnswer.bind(this);
+        // this.handleClickedAnswer = this.handleClickedAnswer.bind(this);
     }
-
-    handleClickedAnswer (e, questionId) {
-        this.setState({
-            answers: {
-                ...this.state.answers,
-                [questionId]: e.target.value
-            }
-        }, () => console.log(this.state.answers))
-    };
-
-    showNext = () => {
-        this.setState({
-            ...this.state,
-            step: this.state.step + 1
-        });
-    };
 
     renderAnswers ({answers, id}) {
         return (
@@ -75,7 +59,7 @@ class Answers extends React.Component {
     render() {
         return (
             <div>
-                {this.renderAnswers}
+                {/*{this.renderAnswers}*/}
             </div>
         )
     }

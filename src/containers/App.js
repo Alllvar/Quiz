@@ -23,7 +23,7 @@ class App extends React.Component {
         return (
             <div className="container">
                 <Router>
-                    <Route exact path="/quiz/:id" component={Quiz}/>
+                    <Route exact path="/quiz" component={Quiz} />
                     <Redirect from="/" to="/quiz" />
                 </Router>
             </div>
