@@ -1,12 +1,13 @@
 .answers {
     align-self: center;
+    justify-content: center;
 }
 .answer {
     list-style-type: none;
-    font-size: 35px;
     color: rgb(240,255,255);
-    margin-top: 20px;
+    margin-top: 30px;
     cursor: pointer;
+    transform: scale(2);
 }
 
 .answer:hover {
@@ -19,8 +20,8 @@
     color: white;
     margin-top: 50px;
     text-decoration: none;
-    margin-left: 50px;
     font-size: 28px;
+    cursor: pointer;
 }
 .next-btn:hover {
     background-color: #ddd;
