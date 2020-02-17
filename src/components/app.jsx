@@ -3,22 +3,24 @@ import './app.css';
 import Quiz from "../components/quiz/quiz";
 import {
     BrowserRouter as Router,
-    Route,
-    Redirect
+    Route
 } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import Result from "./quiz/result";
+import Start from "./start/index";
+import Main from "../main";
 
 const history = createBrowserHistory();
 
 class App extends React.Component {
     render() {
         return (
-            <div className="container">
                 <Router history={history}>
-                    <Route path="/quiz" component={Quiz}/>
-                    <Redirect from="/" to="/quiz/1"/>
+                    <Route path="/start" component={Start} />
+                    <Route path="/quiz" component={Quiz} />
+                    <Route path="/result" component={Result} />
+                    <Route exact path="/" component={Main} />
                 </Router>
-            </div>
         )
     };
 }

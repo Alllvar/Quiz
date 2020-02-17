@@ -1,0 +1,21 @@
+body {
+    background: rgb(160, 255, 97);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.start-btn {
+    width: 300px;
+    height: 100px;
+    margin-top: 300px;
+    cursor: pointer;
+    background-color: violet;
+    font-size: 24px;
+    font-family: monospace;
+}
+
+.start-btn:hover {
+    color: rgb(160, 255, 97);
+    background-color: black;
+}

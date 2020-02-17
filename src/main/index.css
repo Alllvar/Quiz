@@ -1,0 +1,21 @@
+body {
+    background: rgb(28, 223, 116);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.click-btn {
+    width: 300px;
+    height: 100px;
+    margin-top: 300px;
+    cursor: pointer;
+    background-color: violet;
+    font-size: 24px;
+    font-family: monospace;
+}
+
+.click-btn:hover {
+    color: rgb(28, 223, 116);
+    background-color: black;
+}

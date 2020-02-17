@@ -1,6 +1,6 @@
 export const QUESTIONS = [
     {
-        question: '121212',
+        question: 'HTML?',
         id: 1,
         answers: [
             {answer: "Hyper Text Markup Language", id: 1},
@@ -27,7 +27,7 @@ export const QUESTIONS = [
         ]
     },
     {
-        question: '423423424234234',
+        question: '321321321312',
         id: 4,
         answers: [
             {answer: "Zahar", id: 1},

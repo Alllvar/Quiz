@@ -1,11 +1,4 @@
 body {
-    background: linear-gradient(#e66465, #9198e5);
-    height: 100%;
+    background: rgb(160, 255, 97);
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 97.8vh;
-}

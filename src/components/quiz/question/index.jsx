@@ -6,10 +6,14 @@ import { QUESTIONS } from '../../../constants';
 class Question extends React.Component {
     render() {
         const question = QUESTIONS.find(question => question.id === parseInt(this.props.match.params.id, 10));
+        console.log(question);
+
+        const oneQuestion = question.question;
+        console.log(oneQuestion);
 
         return (
-            <div>
-                {question &&
+            <div className="question-container">
+                {oneQuestion && <span className="question">{oneQuestion}</span>}
                     <div className="answers">
                         {question.answers.map(item => (
                             <div key={item.id} className="answer">
@@ -21,10 +25,9 @@ class Question extends React.Component {
                                 />
                                 {item.answer}
                             </div>
-                        ))};
+                        ))}
                         <button className="next-btn" onClick={() => this.props.next(this.props.match.params.id)}>Next</button>
                     </div>
-                }
             </div>
         )
     }
