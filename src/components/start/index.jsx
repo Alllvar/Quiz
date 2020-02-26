@@ -1,6 +1,6 @@
 import React from 'react';
-import "./index.css";
 import { Switch, Route, Link } from 'react-router-dom';
+import './index.css';
 
 class Start extends React.Component {
     render () {

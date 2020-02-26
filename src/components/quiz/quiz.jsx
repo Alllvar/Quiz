@@ -7,28 +7,18 @@ import {
 import Question from "./question";
 import { QUESTIONS } from '../../constants';
 import './quiz.css';
-import Result from "./result";
 
 class Quiz extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.state = {
-        //     answers: [],
-        // };
-
         this.handleAnswer = this.handleAnswer.bind(this);
         this.next = this.next.bind(this);
-
     };
-
-
-    getResult() {
-        let test = 1;
-    }
 
     componentDidMount() {
         sessionStorage.removeItem('answers');
+
         const id = parseInt(this.props.location.pathname.slice(-1), 10);
 
         if(QUESTIONS.find(question => question.id === id)) {
@@ -39,17 +29,9 @@ class Quiz extends React.Component {
     }
 
     handleAnswer(e, questionId) {
-        // this.setState({
-        //     answers: {
-        //         ...this.state.answers,
-        //         [questionId]: e.target.value,
-        //     },
-        // },
-
-        // () => console.log(this.state.answers))
         const answers = sessionStorage.getItem('answers');
         let container;
-        // console.log(answers)
+
         if (!answers) {
             container = {};
         } else {
@@ -60,32 +42,23 @@ class Quiz extends React.Component {
             ...container, 
             [questionId]: e.target.value,
         }))
-
-        console.log(container)
     }
 
     next(questionId) {
         const questionIndex = QUESTIONS.findIndex((question) => question.id === parseInt(questionId, 10));
+        const answers = sessionStorage.getItem('answers');
+        const container = answers ? JSON.parse(answers) : {};
+        const answersLength = Object.keys(container).length;
+
         if(questionIndex < QUESTIONS.length - 1) {
             this.setState({
                 currentQuestion: questionIndex + 1
             }, () => this.props.history.push(`/quiz/${QUESTIONS[questionIndex + 1].id}`))
         }
 
-        const answers = sessionStorage.getItem('answers');
-        // console.log(answers)
-        const container = answers ? JSON.parse(answers) : {};
-
-        const answersLength = Object.keys(container).length;
-        console.log(answersLength);
-
         if (QUESTIONS.length === answersLength) {
-            this.props.history.push(`/result`);
+            this.props.history.push('/result');
         }
-    }
-
-    answerContainer() {
-
     }
 
     render() {
@@ -98,4 +71,5 @@ class Quiz extends React.Component {
         )
     };
 }
+
 export default withRouter(Quiz);

@@ -1,5 +1,5 @@
 body {
-    background: rgb(160, 255, 97);
+    background: #a0ff61;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -10,12 +10,12 @@ body {
     height: 100px;
     margin-top: 300px;
     cursor: pointer;
-    background-color: violet;
+    background-color: #ee82ee;
     font-size: 24px;
     font-family: monospace;
 }
 
 .start-btn:hover {
-    color: rgb(160, 255, 97);
-    background-color: black;
+    color: #a0ff61;
+    background-color: #000000;
 }
