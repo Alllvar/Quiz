@@ -6,10 +6,9 @@ import { QUESTIONS } from '../../../constants';
 class Question extends React.Component {
     render() {
         const question = QUESTIONS.find(question => question.id === parseInt(this.props.match.params.id, 10));
-        console.log(question);
 
         const oneQuestion = question.question;
-        console.log(oneQuestion);
+        // console.log(oneQuestion);
 
         return (
             <div className="question-container">

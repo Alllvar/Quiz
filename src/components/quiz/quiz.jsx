@@ -23,9 +23,9 @@ class Quiz extends React.Component {
     };
 
 
-    // getResult() {
-    //     return this.state.answers;
-    // }
+    getResult() {
+        let test = 1;
+    }
 
     componentDidMount() {
         sessionStorage.removeItem('answers');
@@ -49,7 +49,7 @@ class Quiz extends React.Component {
         // () => console.log(this.state.answers))
         const answers = sessionStorage.getItem('answers');
         let container;
-        console.log(answers)
+        // console.log(answers)
         if (!answers) {
             container = {};
         } else {
@@ -60,6 +60,8 @@ class Quiz extends React.Component {
             ...container, 
             [questionId]: e.target.value,
         }))
+
+        console.log(container)
     }
 
     next(questionId) {
@@ -71,14 +73,19 @@ class Quiz extends React.Component {
         }
 
         const answers = sessionStorage.getItem('answers');
-        console.log(answers)
+        // console.log(answers)
         const container = answers ? JSON.parse(answers) : {};
 
         const answersLength = Object.keys(container).length;
+        console.log(answersLength);
 
         if (QUESTIONS.length === answersLength) {
             this.props.history.push(`/result`);
         }
+    }
+
+    answerContainer() {
+
     }
 
     render() {

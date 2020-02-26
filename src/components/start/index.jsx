@@ -8,7 +8,7 @@ class Start extends React.Component {
             <Switch>
                 <Route path="/start">
                     <Link className="link" to="/quiz/1" >
-                        <button onClick={this.startQuiz} className="start-btn">Click to start quiz!!!</button>
+                        <button className="start-btn">Click to start quiz!!!</button>
                     </Link>
                 </Route>
             </Switch>
