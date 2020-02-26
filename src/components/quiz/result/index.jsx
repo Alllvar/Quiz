@@ -1,16 +1,15 @@
-import React from "react";
-import "./index.css";
-import {QUESTIONS} from "../../../constants/index";
+import React from 'react';
+import {QUESTIONS} from '../../../constants/index';
+import './index.css';
 
 class Result extends React.Component {
-    handleQuestion(question) {
-        const questionText = question.question;
-        const answers = sessionStorage.getItem('answers');
-        const parsedAnswers = JSON.parse(answers);
-        console.log(parsedAnswers)
-        const answerObj = question.answers.find(answer => answer.id == parsedAnswers[question.id]);
-        const answerText = answerObj.answer;
-        return <div key={question.id}>{questionText}: {answerText}</div>;
+    handleQuestion({ text, answers, id }) {
+        const savedAnswers = sessionStorage.getItem('answers');
+        const parsedAnswers = JSON.parse(savedAnswers);
+        const answerObj = answers.find(answer => answer.id == parsedAnswers[id]);
+        const answerText = answerObj.text;
+
+        return <div key={question.id}>{text}: {answerText}</div>;
     }
 
     render() {
