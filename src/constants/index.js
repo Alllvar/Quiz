@@ -27,12 +27,12 @@ export const QUESTIONS = [
         ]
      },
     {
-        text: '321321321312',
+        text: '321321sdf321312',
         id: 4,
         answers: [
             { text: 'Zahar', id: 1 },
             { text: 'Mykola', id: 2 },
             { text: 'Victor', id: 3 }
         ]
-     }
+    }
 ];
