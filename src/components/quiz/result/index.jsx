@@ -9,7 +9,7 @@ class Result extends React.Component {
         const answerObj = answers.find(answer => answer.id == parsedAnswers[id]);
         const answerText = answerObj.text;
 
-        return <div key={question.id}>{text}: {answerText}</div>;
+        return <div key={id}>{text}: {answerText}</div>;
     }
 
     render() {

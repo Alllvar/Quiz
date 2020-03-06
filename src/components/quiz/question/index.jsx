@@ -6,7 +6,7 @@ import './index.css';
 class Question extends React.Component {
     render() {
         const question = QUESTIONS.find(question => question.id === parseInt(this.props.match.params.id, 10));
-        const oneQuestion = question.question;
+        const oneQuestion = question.text;
 
         return (
             <div className="question-container">
@@ -20,7 +20,7 @@ class Question extends React.Component {
                                 value={item.id}
                                 onClick={(e) => this.props.handleAnswer(e, question.id)}
                             />
-                            {item.answer}
+                            {item.text}
                         </div>
                     ))}
                     <button className="next-btn" onClick={() => this.props.next(this.props.match.params.id)}>Next</button>

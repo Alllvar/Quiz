@@ -5,8 +5,15 @@ import {
     withRouter
 } from "react-router-dom";
 import Question from "./question";
+import { connect } from "react-redux";
+import { compose } from "redux";
 import { QUESTIONS } from '../../constants';
+import { next } from '../../actions';
 import './quiz.css';
+
+const mapStateToProps = (state) => ({
+    answers: state.answers
+})
 
 class Quiz extends React.Component {
     constructor(props) {
@@ -17,8 +24,6 @@ class Quiz extends React.Component {
     };
 
     componentDidMount() {
-        sessionStorage.removeItem('answers');
-
         const id = parseInt(this.props.location.pathname.slice(-1), 10);
 
         if(QUESTIONS.find(question => question.id === id)) {
@@ -28,27 +33,15 @@ class Quiz extends React.Component {
         return this.props.history.push(`/quiz/${QUESTIONS[0].id}`);
     }
 
-    handleAnswer(e, questionId) {
-        const answers = sessionStorage.getItem('answers');
-        let container;
-
-        if (!answers) {
-            container = {};
-        } else {
-            container = JSON.parse(answers);
-        }
-
-        sessionStorage.setItem('answers', JSON.stringify({
-            ...container, 
-            [questionId]: e.target.value,
-        }))
+    handleAnswer(e, questionId) {        
+        this.props.next({
+            [questionId]: e.target.value
+        });
     }
 
     next(questionId) {
         const questionIndex = QUESTIONS.findIndex((question) => question.id === parseInt(questionId, 10));
-        const answers = sessionStorage.getItem('answers');
-        const container = answers ? JSON.parse(answers) : {};
-        const answersLength = Object.keys(container).length;
+        const answersLength = Object.keys(this.props.answers).length;
 
         if(questionIndex < QUESTIONS.length - 1) {
             this.setState({
@@ -72,4 +65,7 @@ class Quiz extends React.Component {
     };
 }
 
-export default withRouter(Quiz);
+export default compose(
+        withRouter,
+        connect(mapStateToProps, {next})
+    ) (Quiz);
