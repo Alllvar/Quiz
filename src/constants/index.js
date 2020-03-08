@@ -1,3 +1,5 @@
+export const NEXT = 'NEXT';
+
 export const QUESTIONS = [
     {
         text: 'HTML?',

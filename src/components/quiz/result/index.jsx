@@ -1,14 +1,14 @@
 import React from 'react';
-import {QUESTIONS} from '../../../constants/index';
-import './index.css';
+import { connect } from 'react-redux'
+import { QUESTIONS } from '../../../constants/index';
+import './index.scss';
 
 class Result extends React.Component {
-    handleQuestion({ text, answers, id }) {
-        const savedAnswers = sessionStorage.getItem('answers');
-        const parsedAnswers = JSON.parse(savedAnswers);
-        const answerObj = answers.find(answer => answer.id == parsedAnswers[id]);
+    handleQuestion = ({ text, answers, id }) => {
+        const { userAnswers } = this.props;
+        
+        const answerObj = answers.find(answer => answer.id == userAnswers[id]);
         const answerText = answerObj.text;
-
         return <div key={id}>{text}: {answerText}</div>;
     }
 
@@ -23,4 +23,10 @@ class Result extends React.Component {
     }
 }
 
-export default Result;
+const mapStateToProps = (state) => {
+    return {
+        userAnswers: state.answers
+    }
+}
+
+export default connect(mapStateToProps)(Result);

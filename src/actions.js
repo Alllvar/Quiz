@@ -1,14 +1,8 @@
-export function handleAnswer(e, questionId) {
-    return {
-        type: 'HANDLE_ANSWER', payload: {
-            questionId, questionId: e.target.value
-        }
-    }
-};
+import { NEXT } from './constants/index';
 
 export function next(question) {
     return {
-        type: 'NEXT', payload: {
+        type: NEXT, payload: {
             ...question
         }
     }

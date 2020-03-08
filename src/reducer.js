@@ -1,10 +1,12 @@
+import { NEXT } from './constants/index';
+
 const initialState = {
     answers: {}
 };
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'NEXT':
+        case NEXT:
             return {
                 ...state, 
                 answers: {

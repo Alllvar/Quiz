@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { QUESTIONS } from '../../../constants';
-import './index.css';
+import './index.scss';
 
 class Question extends React.Component {
     render() {

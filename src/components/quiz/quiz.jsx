@@ -4,12 +4,12 @@ import {
     Switch,
     withRouter
 } from "react-router-dom";
-import Question from "./question";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { QUESTIONS } from '../../constants';
 import { next } from '../../actions';
-import './quiz.css';
+import Question from "./question";
+import './quiz.scss';
 
 const mapStateToProps = (state) => ({
     answers: state.answers
