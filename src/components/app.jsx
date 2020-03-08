@@ -8,7 +8,7 @@ import Quiz from '../components/quiz/quiz';
 import Result from './quiz/result';
 import Start from './start/index';
 import Main from '../main';
-import './app.css';
+import './app.scss';
 
 const history = createBrowserHistory();
 
