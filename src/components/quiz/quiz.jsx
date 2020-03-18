@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import { QUESTIONS } from '../../constants';
 import { next } from '../../actions';
-import Question from "./question";
+import Question from './question';
 import './quiz.scss';
 
 const mapStateToProps = (state) => ({
@@ -33,9 +33,10 @@ class Quiz extends React.Component {
         return this.props.history.push(`/quiz/${QUESTIONS[0].id}`);
     }
 
-    handleAnswer(e, questionId) {        
+    handleAnswer(e, questionId) { 
+        console.log(e.target)     
         this.props.next({
-            [questionId]: e.target.value
+            [questionId]: e.target.value,
         });
     }
 

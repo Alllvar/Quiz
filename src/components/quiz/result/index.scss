@@ -6,7 +6,15 @@ body {
         display: flex;
         align-items: center;
         flex-direction: column;
-        height: 97.8vh;
+        .title-result {
+            text-align: center;
+            font-family: Roboto, sans-serif;
+        }
+        .answer {
+            margin-top: 110px;
+            font-size: 28px;  
+            font-family: Roboto, sans-serif;     
+        }
     }
 }
 
