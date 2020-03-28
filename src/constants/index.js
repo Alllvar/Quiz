@@ -57,7 +57,7 @@ export const QUESTIONS = [
         ]
     },
     {
-        id: 2,
+        id: 3,
         text: 'What is proper age to buy alcohol?',
         inputType: INPUT_TYPES.SELECT,
         correctAnswerId: 1,
@@ -81,7 +81,7 @@ export const QUESTIONS = [
         ]
     },
     {
-        id: 3,
+        id: 4,
         text: 'What is official language in Ukraine',
         inputType: INPUT_TYPES.TEXT,
         correctAnswer: 'Ukrainian'

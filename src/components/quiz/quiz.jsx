@@ -33,10 +33,11 @@ class Quiz extends React.Component {
         return this.props.history.push(`/quiz/${QUESTIONS[0].id}`);
     }
 
-    handleAnswer(e, questionId) { 
-        console.log(e.target)     
+    handleAnswer(answer, questionId) { 
+        console.log(answer);
+        console.log(questionId);
         this.props.next({
-            [questionId]: e.target.value,
+            [questionId]: answer
         });
     }
 

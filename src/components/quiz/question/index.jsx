@@ -3,6 +3,8 @@ import { withRouter } from 'react-router-dom';
 import { QUESTIONS, INPUT_TYPES } from '../../../constants';
 import RadioGroup from '../radioGroup';
 import CheckboxGroup from '../checkboxGroup';
+import SelectGroup from '../selectGroup';
+import TextGroup from '../textGroup';
 import './index.scss';
 
 class Question extends React.Component {
@@ -14,11 +16,12 @@ class Question extends React.Component {
             case INPUT_TYPES.CHECKBOX: 
             return <CheckboxGroup item={question} handleChange={this.props.handleAnswer} />;
 
-            // case INPUT_TYPES.TEXT: 
-            // return <TextGroup />;
+            case INPUT_TYPES.SELECT: 
+            return <SelectGroup item={question} handleChange={this.props.handleAnswer} />;
 
-            // case INPUT_TYPES.SELECT: 
-            // return <SelectGroup />;
+            case INPUT_TYPES.TEXT: 
+            return <TextGroup item={question} handleChange={this.props.handleAnswer} />;
+
         }
         return null
     }

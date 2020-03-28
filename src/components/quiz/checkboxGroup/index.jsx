@@ -13,7 +13,7 @@ class CheckboxGroup extends React.Component {
         const value = e.target.value;
         this.setState({
             answer: checked ? [...this.state.answer, value] : this.state.answer.filter(el => el !== value )
-        }, () => this.props.handleChange(e, this.props.item.id))
+        }, () => this.props.handleChange(this.state.answer, this.props.item.id))
     }
     
     renderCheckboxButton(item) {
@@ -25,7 +25,6 @@ class CheckboxGroup extends React.Component {
                     type="checkbox"
                     value={item.id}
                     onClick={this.handleChange.bind(this)}
-
                 /> 
                 {item.text}
             </label>
@@ -33,7 +32,6 @@ class CheckboxGroup extends React.Component {
     }
   
     render() {
-        console.log(this.props.item)
       return (
         <div>
             {this.props.item.answers.map(this.renderCheckboxButton.bind(this))}

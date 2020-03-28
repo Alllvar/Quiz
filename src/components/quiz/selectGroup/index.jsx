@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.scss';
 
-class RadioGroup extends React.Component {
+class SelectGroup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -17,27 +17,22 @@ class RadioGroup extends React.Component {
     
     renderRadioButton(item) {
         return (
-            <label>
-                <input
-                    name={this.props.item.id}
-                    type="radio"
-                    value={item.id}
-                    onClick={this.handleChange.bind(this)}
-                /> 
-                {item.text}
-            </label>
+            <option 
+                value={item.id}>
+                    {item.text}
+            </option>
         )
     }
   
     render() {
       return (
-        <div>
+        <select onChange={this.handleChange.bind(this)}>
             {this.props.item.answers.map(this.renderRadioButton.bind(this))}
-        </div>
+        </select>
       );
     }
 }
 
-export default RadioGroup;
+export default SelectGroup;
 
 
